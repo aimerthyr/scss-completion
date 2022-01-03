@@ -6,21 +6,21 @@
 	"engines": {
 		"vscode": "^1.63.0"
 	},
+	"publisher": "leon-0606",
 	"categories": [
-		"Other"
+		"Other",
+		"Snippets"
 	],
 	"activationEvents": [
-		"onCommand:scss-completion.helloWorld"
+		"onLanguage:scss"
 	],
-	"main": "./dist/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "scss-completion.helloWorld",
-				"title": "Hello World"
-			}
-		]
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Leon-0606/scss-completion.git"
 	},
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"icon": "assets/icon.png",
+	"main": "./dist/extension.js",
 	"scripts": {
 		"vscode:prepublish": "npm run package",
 		"compile": "webpack",

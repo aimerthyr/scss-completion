@@ -1,26 +1,23 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { SCSSCompleteProvider } from './provider';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
-	
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "scss-completion" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('scss-completion.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from scss-completion!');
+export function activate(ctx: vscode.ExtensionContext) {
+	console.log('QingFlow FE ™️ --start');
+	const provider = vscode.languages.registerCompletionItemProvider(
+		{ scheme: 'file', language: 'scss' },
+		new SCSSCompleteProvider(),
+		'$'
+	);
+	const command = vscode.commands.registerCommand('replace color variable', (line: number, replaceText: string) => {
+		vscode.window.activeTextEditor?.edit((editBuilder: vscode.TextEditorEdit) => {
+			editBuilder.replace(new vscode.Range(line, 0, line, 10000), replaceText);
+      // editBuilder.delete(new vscode.Range(line, 0, line, 10000));
+      // editBuilder.insert(new vscode.Position(line, 0), replaceText);
+  	});
 	});
-
-	context.subscriptions.push(disposable);
+	ctx.subscriptions.push(provider, command);
 }
 
-// this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() {
+	console.log('QingFlow FE ™️ --over');
+}
