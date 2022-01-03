@@ -11,4 +11,4 @@
 ### 如果遇到使用方面的问题或者没有触发，可以直接找我沟通
 
 **Enjoy!**
-[![README](https://s4.ax1x.com/2022/01/03/TbdOgA.gif)](https://imgtu.com/i/TbdOgA)
+[![yJj7y.gif](https://s1.328888.xyz/2022/01/03/yJj7y.gif)](https://imgloc.com/image/yJj7y)
