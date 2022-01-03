@@ -33,7 +33,7 @@ export class SCSSCompleteProvider implements vscode.CompletionItemProvider {
       option.filterText = '$';
       option.kind = this.descriptor.kind;
       option.insertText = this.descriptor.insertText || variable;
-      option.detail = this.descriptor.detail || '颜色';
+      option.detail = this.descriptor.detail;
       if (this.mode === 'replace') {
         const markdown =  new vscode.MarkdownString(
           `<span style=\"color:${color};\">■ </span>
@@ -108,9 +108,11 @@ export class SCSSCompleteProvider implements vscode.CompletionItemProvider {
       //#endregion
     } else {
       // #region 如果是直接输入颜色值 #DCECFE $触发
-      const COLOR_VARIABLE = COLOR_MAP.get(propertyValue.toUpperCase());
-      if (COLOR_VARIABLE) {
-        completionItems = [COLOR_VARIABLE];
+      const COLOR_VARIABLE1 = COLOR_MAP.get(propertyValue.toUpperCase());
+      const COLOR_VARIABLE2 = GRAY_MAP.get(propertyValue.toLocaleUpperCase());
+      if (COLOR_VARIABLE1 || COLOR_VARIABLE2) {
+        COLOR_VARIABLE1 && completionItems.push(COLOR_VARIABLE1);
+        COLOR_VARIABLE2 && completionItems.push(COLOR_VARIABLE2);
       } else {
         // 对颜色进行模糊匹配
         const COLOR_VARIABLE_LIST1 = [...COLOR_MAP.values()];
@@ -126,6 +128,7 @@ export class SCSSCompleteProvider implements vscode.CompletionItemProvider {
       }
       this.descriptor.insertText = '';
       this.descriptor.kind = vscode.CompletionItemKind.Color;
+      this.descriptor.detail = '颜色';
       this.mode = 'replace';
       // #endregion
     }
