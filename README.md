@@ -11,4 +11,5 @@
 ### 如果遇到使用方面的问题或者没有触发，可以直接找我沟通
 
 **Enjoy!**
-[![yJj7y.gif](https://file.qingflow.com/uploads/file/99befb45-b04b-448a-8559-e9146df41d7c.gif)](https://file.qingflow.com/uploads/file/99befb45-b04b-448a-8559-e9146df41d7c.gif)
+
+![README.gif](https://file.qingflow.com/uploads/file/8886504d-5ebf-4b79-aa3b-68a9a0c162f9.gif)

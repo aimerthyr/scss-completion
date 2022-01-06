@@ -29,18 +29,6 @@ export const BORDER_RADIUS_VARIABLE = [
   'style.$border-radius-large = 16px',
 ];
 
-/** 背景色 */
-export const BACKGROUND_COLOR_VARIABLE = [
-  'style.$background-color-white = #FFFFFF',
-  'style.$background-color-10 = #F9FAFC'
-];
-
-/** 边框色 */
-export const BORDER_COLOR_VARIABLE = [
-  'style.$border-color-white = #FFFFFF',
-  'style.$border-color-10 = #E6EAF0',
-  'style.$border-color-20 = #CCD4E0'
-];
 
 /** 调色板  */
 export const COLOR_MAP = new Map([
@@ -202,4 +190,17 @@ export const GRAY_MAP = new Map([
   ['#767E89', 'style.$gray-80 = gray-80:#767E89'],
   ['#494F57', 'style.$gray-90 = gray-90:#494F57'],
   ['#121315', 'style.$gray-100 = gray-100:#121315'],
+]);
+
+/** 背景色 需要单独拿出来 颜色有重复 */
+export const BACKGROUND_COLOR_MAP = new Map([
+  ['#FFFFFF', 'style.$background-color-white = background-color-white:#FFFFFF'],
+  ['#F9FAFC', 'style.$background-color-10 = background-color-10:#F9FAFC']
+]);
+
+/** 边框色 需要单独拿出来 颜色有重复 */
+export const BORDER_COLOR_MAP = new Map([
+  ['#FFFFFF', 'style.$border-color-white = border-color-white:#FFFFFF'],
+  ['#E6EAF0', 'style.$border-color-10 = border-color-10:#E6EAF0'],
+  ['#CCD4E0', 'style.$border-color-20 = border-color-20:#CCD4E0']
 ]);
