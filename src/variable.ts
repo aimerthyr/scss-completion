@@ -17,9 +17,12 @@ export const FONT_WEIGHT_VARIABLE = [
 
 /** 盒子阴影 */
 export const BOX_SHADOW_VARIABLE = [
-  'style.$shadow-small = 0px 4px 6px 0px rgba(12, 31, 80, 0.04)',
-  'style.$shadow-medium = 0px 4px 10px 0px rgba(12, 31, 80, 0.08)',
-  'style.$shadow-large = 0px 16px 64px 0px rgba(12, 31, 80, 0.12)'
+  'style.$shadow-small = 0px 4px 6px 0px',
+  'style.$shadow-border-small = 0px 4px 6px 0px border',
+  'style.$shadow-medium = 0px 4px 10px 0px',
+  'style.$shadow-border-medium = 0px 4px 10px 0px border',
+  'style.$shadow-large = 0px 16px 64px 0px',
+  'style.$shadow-border-large = 0px 16px 64px 0px border'
 ];
 
 /** 边框圆角 */
@@ -33,6 +36,7 @@ export const BORDER_RADIUS_VARIABLE = [
 /** 调色板  */
 export const COLOR_MAP = new Map([
   // azure
+  ['#F4F9FF', 'style.color-palette(azure, 5) = azure-5:#F4F9FF'],
   ['#DCECFE', 'style.color-palette(azure, 10) = azure-10:#DCECFE'],
   ['#BADAFE', 'style.color-palette(azure, 20) = azure-20:#BADAFE'],
   ['#97C7FD', 'style.color-palette(azure, 30) = azure-30:#97C7FD'],
@@ -45,6 +49,7 @@ export const COLOR_MAP = new Map([
   ['#081C32', 'style.color-palette(azure, 100) = azure-100:#081C32'],
 
   // blue
+  ['#F2FCFF', 'style.color-palette(blue, 5) = blue-5:#F2FCFF'],
   ['#D6F6FE', 'style.color-palette(blue, 10) = blue-10:#D6F6FE'],
   ['#ADECFE', 'style.color-palette(blue, 20) = blue-20:#ADECFE'],
   ['#85E3FD', 'style.color-palette(blue, 30) = blue-30:#85E3FD'],
@@ -56,6 +61,7 @@ export const COLOR_MAP = new Map([
   ['#004F64', 'style.color-palette(blue, 90) = blue-90:#004F64'],
   ['#002732', 'style.color-palette(blue, 100) = blue-100:#002732'],
   // emerald
+  ['#F2FDFA', 'style.color-palette(emerald, 5) = emerald-5:#F2FDFA'],
   ['#D6F9EF', 'style.color-palette(emerald, 10) = emerald-10:#D6F9EF'],
   ['#ADF3DF', 'style.color-palette(emerald, 20) = emerald-20:#ADF3DF'],
   ['#85EDCF', 'style.color-palette(emerald, 30) = emerald-30:#85EDCF'],
@@ -67,6 +73,7 @@ export const COLOR_MAP = new Map([
   ['#00573E', 'style.color-palette(emerald, 90) = emerald-90:#00573E'],
   ['#002B1F', 'style.color-palette(emerald, 100) = emerald-100:#002B1F'],
   // green
+  ['#F8FDF2', 'style.color-palette(green, 5) = green-5:#F8FDF2'],
   ['#E8F8D6', 'style.color-palette(green, 10) = green-10:#E8F8D6'],
   ['#D1F0AD', 'style.color-palette(green, 20) = green-20:#D1F0AD'],
   ['#BAE985', 'style.color-palette(green, 30) = green-30:#BAE985'],
@@ -78,6 +85,7 @@ export const COLOR_MAP = new Map([
   ['#2C5400', 'style.color-palette(green, 90) = green-90:#2C5400'],
   ['#162A00', 'style.color-palette(green, 100) = green-100:#162A00'],
   // indigo
+  ['#F7F8FF', 'style.color-palette(indigo, 5) = indigo-5:#F7F8FF'],
   ['#E6E7FE', 'style.color-palette(indigo, 10) = indigo-10:#E6E7FE'],
   ['#CDCFFE', 'style.color-palette(indigo, 20) = indigo-20:#CDCFFE'],
   ['#B5B7FD', 'style.color-palette(indigo, 30) = indigo-30:#B5B7FD'],
@@ -89,6 +97,7 @@ export const COLOR_MAP = new Map([
   ['#282A64', 'style.color-palette(indigo, 90) = indigo-90:#282A64'],
   ['#141532', 'style.color-palette(indigo, 100) = indigo-100:#141532'],
   // orange
+  ['#FFF8F5', 'style.color-palette(orange, 5) = orange-5:#FFF8F5'],
   ['#FEE2D6', 'style.color-palette(orange, 10) = orange-10:#FEE2D6'],
   ['#FDCBB5', 'style.color-palette(orange, 20) = orange-20:#FDCBB5'],
   ['#FCB394', 'style.color-palette(orange, 30) = orange-30:#FCB394'],
@@ -100,6 +109,7 @@ export const COLOR_MAP = new Map([
   ['#642C14', 'style.color-palette(orange, 90) = orange-90:#642C14'],
   ['#32160A', 'style.color-palette(orange, 100) = orange-100:#32160A'],
   // pink
+  ['#FDF7FF', 'style.color-palette(pink, 5) = pink-5:#FDF7FF'],
   ['#F8E6FE', 'style.color-palette(pink, 10) = pink-10:#F8E6FE'],
   ['#F0CDFE', 'style.color-palette(pink, 20) = pink-20:#F0CDFE'],
   ['#E9B5FD', 'style.color-palette(pink, 30) = pink-30:#E9B5FD'],
@@ -111,6 +121,7 @@ export const COLOR_MAP = new Map([
   ['#542864', 'style.color-palette(pink, 90) = pink-90:#542864'],
   ['#2A1432', 'style.color-palette(pink, 100) = pink-100:#2A1432'],
   // purple
+  ['#F9F7FF', 'style.color-palette(purple, 5) = purple-5:#F9F7FF'],
   ['#EBE6FE', 'style.color-palette(purple, 10) = purple-10:#EBE6FE'],
   ['#D8CDFE', 'style.color-palette(purple, 20) = purple-20:#D8CDFE'],
   ['#C4B5FD', 'style.color-palette(purple, 30) = purple-30:#C4B5FD'],
@@ -122,6 +133,7 @@ export const COLOR_MAP = new Map([
   ['#352864', 'style.color-palette(purple, 90) = purple-90:#352864'],
   ['#1B1432', 'style.color-palette(purple, 100) = purple-100:#1B1432'],
   // qing-orange
+  ['#FFFAF5', 'style.color-palette(qing-orange, 5) = qing-orange-5:#FFFAF5'],
   ['#FCEBDC', 'style.color-palette(qing-orange, 10) = qing-orange-10:#FCEBDC'],
   ['#FCDABB', 'style.color-palette(qing-orange, 20) = qing-orange-20:#FCDABB'],
   ['#FCC89A', 'style.color-palette(qing-orange, 30) = qing-orange-30:#FCC89A'],
@@ -133,6 +145,7 @@ export const COLOR_MAP = new Map([
   ['#80430D', 'style.color-palette(qing-orange, 90) = qing-orange-90:#80430D'],
   ['#572B05', 'style.color-palette(qing-orange, 100) = qing-orange-100:#572B05'],
   // qing-purple
+  ['#F5F5FC', 'style.color-palette(qing-purple, 5) = qing-purple-5:#F5F5FC'],
   ['#D7D5F3', 'style.color-palette(qing-purple, 10) = qing-purple-10:#D7D5F3'],
   ['#B8B4E9', 'style.color-palette(qing-purple, 20) = qing-purple-20:#B8B4E9'],
   ['#9893DF', 'style.color-palette(qing-purple, 30) = qing-purple-30:#9893DF'],
@@ -144,6 +157,7 @@ export const COLOR_MAP = new Map([
   ['#17134E', 'style.color-palette(qing-purple, 90) = qing-purple-90:#17134E'],
   ['#0B0927', 'style.color-palette(qing-purple, 100) = qing-purple-100:#0B0927'],
   // red
+  ['#FFF6F6', 'style.color-palette(red, 5) = red-5:#FFF6F6'],
   ['#FEE2E3', 'style.color-palette(red, 10) = red-10:#FEE2E3'],
   ['#FEC5C7', 'style.color-palette(red, 20) = red-20:#FEC5C7'],
   ['#FDA9AB', 'style.color-palette(red, 30) = red-30:#FDA9AB'],
@@ -155,6 +169,7 @@ export const COLOR_MAP = new Map([
   ['#641E20', 'style.color-palette(red, 90) = red-90:#641E20'],
   ['#320F10', 'style.color-palette(red, 100) = red-100:#320F10'],
   // yellow
+  ['#FFFBF2', 'style.color-palette(yellow, 5) = yellow-5:#FFFBF2'],
   ['#FCEECA', 'style.color-palette(yellow, 10) = yellow-10:#FCEECA'],
   ['#FCE3A2', 'style.color-palette(yellow, 20) = yellow-20:#FCE3A2'],
   ['#FCD779', 'style.color-palette(yellow, 30) = yellow-30:#FCD779'],
