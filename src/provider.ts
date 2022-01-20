@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { BACKGROUND_COLOR_MAP, BORDER_COLOR_MAP, BORDER_RADIUS_VARIABLE, BOX_SHADOW_VARIABLE, COLOR_MAP, FONT_SIZE_VARIABLE, FONT_WEIGHT_VARIABLE, GRAY_MAP } from './variable';
+import { BACKGROUND_COLOR_MAP, BORDER_COLOR_MAP, BORDER_RADIUS_VARIABLE, BOX_SHADOW_VARIABLE, COLOR_MAP, FONT_SIZE_VARIABLE, FONT_WEIGHT_VARIABLE, FUNCTION_COLOR_MAP, GRAY_MAP } from './variable';
 export class SCSSCompleteProvider implements vscode.CompletionItemProvider {
   private descriptor: Partial<vscode.CompletionItem> = {};
   // 模式： 替换 ｜ 补全
@@ -92,14 +92,15 @@ export class SCSSCompleteProvider implements vscode.CompletionItemProvider {
       this.mode = 'completion';
       //#endregion
     } else {
-      const isHexColor = /^#?([a-f0-9]{6}|[a-f0-9]{3})$/.test(lastPropertyValue);
+      const isHexColor = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(lastPropertyValue);
       // 说明是颜色值 那么可以直接通过$触发
       if (isHexColor) {
         const COLOR_VARIABLE1 = COLOR_MAP.get(lastPropertyValue.toUpperCase());
         const COLOR_VARIABLE2 = GRAY_MAP.get(lastPropertyValue.toUpperCase());
         const COLOR_VARIABLE3 = BACKGROUND_COLOR_MAP.get(lastPropertyValue.toUpperCase());
         const COLOR_VARIABLE4 = BORDER_COLOR_MAP.get(lastPropertyValue.toUpperCase());
-        [COLOR_VARIABLE1, COLOR_VARIABLE2, COLOR_VARIABLE3, COLOR_VARIABLE4].forEach(variable => {
+        const COLOR_VARIABLE5 = FUNCTION_COLOR_MAP.get(lastPropertyValue.toUpperCase());
+        [COLOR_VARIABLE1, COLOR_VARIABLE2, COLOR_VARIABLE3, COLOR_VARIABLE4, COLOR_VARIABLE5].forEach(variable => {
           if (variable) {
             completionItems.push(variable);
           }
@@ -110,7 +111,8 @@ export class SCSSCompleteProvider implements vscode.CompletionItemProvider {
         const COLOR_VARIABLE_LIST2 = [...GRAY_MAP.values()];
         const COLOR_VARIABLE_LIST3 = [...BACKGROUND_COLOR_MAP.values()];
         const COLOR_VARIABLE_LIST4 = [...BORDER_COLOR_MAP.values()];
-        [COLOR_VARIABLE_LIST1, COLOR_VARIABLE_LIST2, COLOR_VARIABLE_LIST3, COLOR_VARIABLE_LIST4].forEach(list => {
+        const COLOR_VARIABLE_LIST5 = [...FUNCTION_COLOR_MAP.values()];
+        [COLOR_VARIABLE_LIST1, COLOR_VARIABLE_LIST2, COLOR_VARIABLE_LIST3, COLOR_VARIABLE_LIST4, COLOR_VARIABLE_LIST5].forEach(list => {
           completionItems.push(...list.filter(str => {
             const reg = new RegExp(lastPropertyValue, 'i');
             return reg.test(str);

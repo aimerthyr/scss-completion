@@ -180,10 +180,6 @@ export const COLOR_MAP = new Map([
   ['#A87900', 'style.func-color-palette(yellow, 80) = yellow-80:#A87900'],
   ['#805B00', 'style.func-color-palette(yellow, 90) = yellow-90:#805B00'],
   ['#573E00', 'style.func-color-palette(yellow, 100) = yellow-100:#573E00'],
-  // function-color
-  ['#00BD77', 'style.$function-green = function-green:#00BD77'],
-  ['#FB4B51', 'style.$function-red = function-red:#FB4B51'],
-  ['#FB9337', 'style.$function-yellow = function-yellow:#FB9337'],
   // gradient-color
   ['linear-gradient(90.04deg, #268BFB -16.37%, #33E1AE 137.34%)', 'style.$azure-60-emerald-50 = azure-60-emerald-50'],
   ['linear-gradient(89.96deg, #FA6F32 0.05%, #FB9337 79.83%)', 'style.$orange-60-qing-orange-60 = orange-60-qing-orange-60'],
@@ -218,4 +214,12 @@ export const BORDER_COLOR_MAP = new Map([
   ['#FFFFFF', 'style.$border-color-white = border-color-white:#FFFFFF'],
   ['#E6EAF0', 'style.$border-color-10 = border-color-10:#E6EAF0'],
   ['#CCD4E0', 'style.$border-color-20 = border-color-20:#CCD4E0']
+]);
+
+/** 功能色 需要单独拿出来 颜色有重复  */
+export const FUNCTION_COLOR_MAP = new Map([
+   // function-color
+   ['#00BD77', 'style.$function-green = function-green:#00BD77'],
+   ['#FB4B51', 'style.$function-red = function-red:#FB4B51'],
+   ['#FB9337', 'style.$function-yellow = function-yellow:#FB9337'],
 ]);

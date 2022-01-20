@@ -2,7 +2,7 @@
 	"name": "scss-completion",
 	"displayName": "scss-completion",
 	"description": "A scss completion plugin for qingflow",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"engines": {
 		"vscode": "^1.63.0"
 	},
